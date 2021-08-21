@@ -26,16 +26,16 @@ dist <- function(a,b)
   sqrt(sum((a-b)^2))
 }
 
-splitPair <- function(P_y, xbar, delta){
+splitPair <- function(P_x, P_y, delta){
+  xbar <- P_x[floor(nrow(P_x)/2),1]
   S_y <- P_y[ P_y[,1] <= xbar +delta & P_y[,1] >= xbar - delta, ]
   best <- delta
   bestPair <- NULL
-  if (is.null(S_y) |  nrow(S_y)==1)
-    list(best,bestPair)
-  else
-  {
-    if (nrow(S_y)<=7)
-    {
+  if (is.null(S_y))
+  {bestPair}
+  else if (nrow(S_y)==1)
+  {bestPair}
+  else if (nrow(S_y)<=7){
       for (i in 1: (nrow(S_y)-1))
         for (l in (i+1):nrow(S_y))
         {
@@ -45,11 +45,10 @@ splitPair <- function(P_y, xbar, delta){
             bestPair <- rbind(S_y[i,], S_y[l,])
           }
         }
-      list(best,bestPair)
+     bestPair
     }
-    else
-    {
-      for (j in 1: (nrow(S_y)-7))
+  else{
+      for (j in 1: nrow(S_y)-1)
         for (k in 1: min(7, nrow(S_y)-j) )
         {
           if (dist(S_y[j,], S_y[j+k,]) < best )
@@ -58,15 +57,14 @@ splitPair <- function(P_y, xbar, delta){
             bestPair <- rbind(S_y[j,], S_y[j+k,])
           }
         }
-      list(best, bestPair)
+      bestPair
     }
-  }
 }
 
-closestPair <- function(P)
+
+closestPair <- function(P_x, P_y)
 {
-  if(nrow(P)<=5)
-  { 
+   if (nrow(P_x) <= 5){
     best <- dist(P[1,],P[2,])
     bestPair <- rbind(P[1,],P[2,])
     for (i in 1:(nrow(P)-1))
@@ -78,30 +76,35 @@ closestPair <- function(P)
           bestPair <- rbind(P[i,], P[j,])
         }
       }
-    list(best,bestPair)
+    bestPair
   }
-  else
-  {'we could have written our own sort method by generalising the mergeSort file'
-    P_x <- P[order(P[,1]),]
-    P_y<- P[order(P[,2]),]
+  else{
     xbar <- P_x[floor(nrow(P_x)/2),1]
     Q_x <- P_x[P_x[,1]<= xbar,]
+    Q_y <- P_y[P_y[,1]<= xbar,]
     R_x <- P_x[P_x[,1]> xbar,]
-    leftSol <- closestPair(Q_x)
-    rightSol <- closestPair(R_x)
-    delta <- min(leftSol[[1]], rightSol[[1]])
-    splitSol <- splitPair(P_y, xbar, delta)
-    if (splitSol[[1]]<delta)
-    {
-      splitSol
-    }
-    else
-    {
-      if (leftSol[[1]] <= rightSol[[1]]) 
+    R_y <- P_y[P_y[,1]> xbar,]
+    leftSol <- closestPair(Q_x,Q_y)
+    rightSol <- closestPair(R_x,R_y)
+    delta <- min(dist(leftSol[1,],leftSol[2,]), dist(rightSol[1,],rightSol[2,]))
+    splitSol <- splitPair(P_x,P_y,delta)
+    if (is.null(splitSol)){
+      if (dist(leftSol[1,],leftSol[2,])<dist(rightSol[1,],rightSol[2,])){
         leftSol
-      else
+      }
+      else{
         rightSol
+      }
+    } 
+    else{
+      splitSol
     }
   }
 }
+
+
+P <- matrix(runif(400),nrow=200)
+P_x <- P[order(P[,1]),]
+P_y <- P[order(P[,2]),]
+closestPair(P_x,P_y)
 
