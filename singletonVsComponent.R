@@ -42,6 +42,45 @@ segments(x[238,1],x[238,2],x[793,1],x[793,2],col = 'red')
 
 
 
+
+'uniform in a disc'
+
+r <- runif(1000, 0.82,1)
+theta <- runif(1000, 0, 2*pi)
+x <- r* cos(theta)
+y <- r* sin(theta)
+a <- cbind(x,y)
+plot(a)
+
+
+
+g0 <- spatgraph(a, "geometric", par=0.06)
+isoVsComp(g0)
+plot(g0,a, col='blue', points.pch=19, points.cex=0.2)
+
+g1 <- spatgraph(a, "geometric", par=0.05)
+isoVsComp(g1)
+plot(g1,a, col='blue', points.pch=19, points.cex=0.2)
+
+
+g2 <- spatgraph(a,"geometric", par=0.04)
+isoVsComp(g2)
+plot(g2,a, col='blue', points.pch=19, points.cex=0.2)
+
+g3 <- spatgraph(a,"geometric", par=0.03)
+isoVsComp(g3)
+plot(g3,a, col='blue', points.pch=19, points.cex=0.2)
+
+g4 <- spatgraph(a,"geometric", par=0.02)
+isoVsComp(g4)
+plot(g4,a, col='blue', points.pch=19, points.cex=0.2)
+
+g5 <- spatgraph(a,"geometric", par=0.01)
+isoVsComp(g5)
+plot(g5,a, col='blue', points.pch=19, points.cex=0.2)
+
+
+
 'plot cluster'
 clus<- spatcluster(g)
 plot(clus,x, points.cex = 0.2)
