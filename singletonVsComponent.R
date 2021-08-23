@@ -45,7 +45,7 @@ segments(x[238,1],x[238,2],x[793,1],x[793,2],col = 'red')
 
 'uniform in a disc'
 
-r <- runif(1000, 0.82,1)
+r <- runif(1000, 0.5,1)
 theta <- runif(1000, 0, 2*pi)
 x <- r* cos(theta)
 y <- r* sin(theta)
@@ -54,24 +54,20 @@ plot(a)
 
 
 
-g0 <- spatgraph(a, "geometric", par=0.06)
-isoVsComp(g0)
-plot(g0,a, col='blue', points.pch=19, points.cex=0.2)
-
-g1 <- spatgraph(a, "geometric", par=0.05)
+g1 <- spatgraph(a, "geometric", par=0.08)
 isoVsComp(g1)
 plot(g1,a, col='blue', points.pch=19, points.cex=0.2)
 
 
-g2 <- spatgraph(a,"geometric", par=0.04)
+g2 <- spatgraph(a,"geometric", par=0.07)
 isoVsComp(g2)
 plot(g2,a, col='blue', points.pch=19, points.cex=0.2)
 
-g3 <- spatgraph(a,"geometric", par=0.03)
+g3 <- spatgraph(a,"geometric", par=0.06)
 isoVsComp(g3)
 plot(g3,a, col='blue', points.pch=19, points.cex=0.2)
 
-g4 <- spatgraph(a,"geometric", par=0.02)
+g4 <- spatgraph(a,"geometric", par=0.05)
 isoVsComp(g4)
 plot(g4,a, col='blue', points.pch=19, points.cex=0.2)
 
