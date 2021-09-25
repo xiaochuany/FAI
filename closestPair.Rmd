@@ -1,0 +1,48 @@
+---
+title: "Find the closest pair of points in 2 dimension"
+author: "Xiaochuan Yang"
+date: "25/09/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Problem
+
+Given a family of $n$ points in 2d square, find the pair that are closest in Euclidean distance and output their distance to each other.
+
+The goal is to complete the task in $O(n\log n)$ time.
+
+# Method
+
+Use the divide and conquer algorithm.
+
+1.  divide the points into left group and right group
+2.  find the closest pair in each of the two groups.
+3.  find the split pair that are the closest
+4.  compare the three distances and output the pair that achieves the minimum
+
+We need to write two functions. The first, "splitPair", finds the closest pair between *two* groups of points, one point from each group. The second, "closestPair", finds the closest pair in *one* group of points.
+
+A naive implementation of this algorithm will take at least $n^2$ time to complete the task, because the split pair function calculate the distance between two groups of points of size $n/2$ each.
+
+Here is how we can avoid this.
+
+1.  divide the points into left group and right group
+2.  find the closest pair in each of the two groups, **and also the minimal distance** $\delta$
+3.  **find the closest pair among all split pairs within a distance of** $\delta$ to the boundary of the two groups.
+4.  compare the three distances and output the pair that achieves the minimum.
+
+Sure, we have abandoned all the points that are not within $\delta$ to the boundary of two groups, thus reduce the running time of step 3, but what if there are still a positive proportion of the $n$ points lying in the $\delta$ neighborhood of the boundary? It turns out that the definition of $\delta$ helps, and a geometric consideration leads to a linear time execution of step 3. This, together with the common sense that a binary tree is of height $\log n$, gives the desired $n\log n$ bounds for the running time of the algorithm.
+
+Now let's do this for real.
+
+# Implementation
+
+let's start.
+
+```{r}
+
+```
