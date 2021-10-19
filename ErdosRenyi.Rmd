@@ -1,0 +1,40 @@
+---
+title: "ER model"
+author: "Xiaochuan Yang"
+date: "19/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Erdos-Renyi random graphs
+
+Given $n$ nodes, connect any pair of nodes with probability $p$, independently with all other pairs. The induced random graph with vertex set $V$ and edge set $E$ is called Erdos-Renyi random graph, denoted by $G(n,p)$. 
+
+```{r}
+install.packages("igraph")
+library(igraph)
+```
+
+We simulate these gaphs wit R package igraph. 
+
+```{r}
+g<-erdos.renyi.game(25, 0.1)
+plot(g)
+```
+## Cards
+
+Let's generate a deck of cards. 
+
+```{r}
+cards <-c(2:10, "J","Q","K")
+suits <- c("♠", "♥", "♦", "♣")
+deck <- paste0(rep(cards,length(suits)),rep(suits,each=length(cards)))
+sample(deck)
+```
+
+## Compute winning probability
+
+
