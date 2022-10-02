@@ -21,9 +21,13 @@ library(igraph)
 We simulate these gaphs wit R package igraph. 
 
 ```{r}
-g<-erdos.renyi.game(25, 0.1)
-plot(g)
+g <- barabasi.game(500, power = 1.2, m = NULL, out.dist = NULL, out.seq = NULL,
+  out.pref = FALSE, zero.appeal = 1, directed = FALSE,
+  algorithm ="psumtree", start.graph = NULL)
+plot(g, vertex.label= NA, edge.arrow.size=0.02,vertex.size = 0.5, xlab = "Scale-free network model")
 ```
+
+
 ## Cards
 
 Let's generate a deck of cards. 
@@ -35,6 +39,16 @@ deck <- paste0(rep(cards,length(suits)),rep(suits,each=length(cards)))
 sample(deck)
 ```
 
-## Compute winning probability
+## Financial data
+
+```{r}
+prices <- rep(200,255)
+for (i in 2:255){prices[i] <- prices[i-1]+(runif(1)-0.5)*5}
+prices1 <- rep(200,255)
+for (i in 2:255){prices1[i] <- prices1[i-1]+(runif(1)-0.5)*10}
+plot(prices1, type="l")
+lines(prices, col="blue")
+```
+
 
 
