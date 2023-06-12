@@ -31,4 +31,4 @@ In the later notebooks (DL08-09), I take the object-oriented programming approac
 
 Although the MLP achieves about 97% accuracy for the MNIST data, this architecture is powerful enough to handle slightly more complicated datasets such as CIFAR10. Indeed, in DL10, I demonstrate that MLP can only achieve 36% accuracy.  
 
-A PDF note contains mathematical derivation of the backprop algorithm and a few tricks. 
+A PDF note contains mathematical derivation of the backprop algorithm and a few tricks for training neural networks. 
