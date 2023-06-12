@@ -1,4 +1,4 @@
-# FAI
+# FunAI
 getting started with fundamentals of AI
 
 #### Purpose
