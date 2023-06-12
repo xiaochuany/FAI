@@ -30,3 +30,5 @@ In the first notebooks (DL01-07), the focus is on training neural nets from scra
 In the later notebooks (DL08-09), I take the object-oriented programming approach and code the linear layers, the activation layers, loss in terms of class, and provide them with the forward method and backward method.
 
 Although the MLP achieves about 97% accuracy for the MNIST data, this architecture is powerful enough to handle slightly more complicated datasets such as CIFAR10. Indeed, in DL10, I demonstrate that MLP can only achieve 36% accuracy.  
+
+A PDF note contains mathematical derivation of the backprop algorithm and a few tricks. 
