@@ -27,8 +27,8 @@ The codes are written in stages.
 
 In the first notebooks (DL01-07), the focus is on training neural nets from scratch. It involves neural nets of different sizes, activations, and performance indices. They are first trained on a small fraction of dataset (train/test =1000/100) then applied to the original MINST (60k/10k). 
 
-In the later notebooks (DL08-09), I take the object-oriented programming approach and code the linear layers, the activation layers, loss in terms of class, and provide them with the forward method and backward method.
+In the later notebooks (DL08-09), I take the object-oriented programming approach and coded the linear layers, the activation layers, loss layer as classes, and provide them with the forward method and backward method.
 
-Although the MLP achieves about 97% accuracy for the MNIST data, this architecture struggles to handle slightly more complicated datasets such as CIFAR10. Indeed, in DL10, I demonstrate that running MLP leads to  only 30% accuracy! 
+Although the MLP achieves about 97% accuracy for the MNIST data, this architecture struggles to handle (just slightly) more complicated datasets such as CIFAR10. Indeed, in notebook DL10, I demonstrate that running MLP leads to only 30% accuracy !
 
-A PDF note contains mathematical derivation of the backprop algorithm and a few tricks for training neural networks. 
+I also write a note in PDF format which contains mathematical derivation of the backprop algorithm and a few tricks for training neural networks. 
