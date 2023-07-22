@@ -23,7 +23,7 @@ Deep learning for 2nd-year undergraduate students in mathematics
 
 7. Apply the techniques to the MNIST dataset (in CSV format available on Kaggle) [MNIST Dataset](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv).
 
-The codes are written in stages.
+The code was written in stages.
 
 In the first notebooks (DL01-07), the focus is on training neural nets from scratch. It involves neural nets of different sizes, activations, and performance indices. They are first trained on a small fraction of dataset (train/test =1000/100) then applied to the original MINST (60k/10k). 
 
