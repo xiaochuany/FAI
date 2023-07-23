@@ -33,6 +33,3 @@ Although the MLP achieves about 97% accuracy for the MNIST data, this architectu
 
 In a PDF document, I also describe the mathematical derivation of the backprop algorithm and a few tricks for training neural networks. 
 
-
------
-
