@@ -5,7 +5,7 @@
 
 -----
 
-## Project (Teaching)
+## Mathematics of Neural Networks (Teaching)
 
 Deep learning for 2nd-year undergraduate students in mathematics
 
@@ -33,3 +33,21 @@ Although the MLP achieves about 97% accuracy for the MNIST data, this architectu
 
 In a PDF document, I also describe the mathematical derivation of the backprop algorithm and a few tricks for training neural networks. 
 
+
+-----
+
+## Practical Machine Learning
+
+Focuses on machine learning of structured data which are universal in the business world. Covers topics thoughout the lifecycle of a data project: 
+
+* data loading
+* data processing (suitable for the intended algorithm)
+* sklearn (random forest, gradient boosting), XGBoost
+* training and hyperparameter search
+* inference
+
+Data scourse [Kaggle](https://www.kaggle.com/)
+
+TODO:
+* handle massive dataset (loading, processing, training, tuning, inference)
+* leverage GPU usage
