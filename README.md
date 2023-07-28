@@ -38,16 +38,19 @@ In a PDF document, I also describe the mathematical derivation of the backprop a
 
 ## Practical Machine Learning
 
-Focuses on machine learning of structured data which are universal in the business world. Covers topics thoughout the lifecycle of a data project: 
+Focuses on machine learning of structured data, which is universal in the business world. This project includes demos in AWS SageMaker Studio Lab covering various topics throughout the lifecycle of a data project:
 
-* data loading
-* data processing (suitable for the intended algorithm)
-* sklearn (random forest, gradient boosting), XGBoost
-* training and hyperparameter search
-* inference
+* Data loading
+* Data processing (suitable for the intended algorithm)
+* Sklearn (random forest, gradient boosting), XGBoost
+* Training and hyperparameter search
+* Inference
 
-Data scourse [Kaggle](https://www.kaggle.com/)
+Data sources: 
+[Kaggle](https://www.kaggle.com/datasets) 
+[HugginFace](https://huggingface.co/docs/datasets/index)
 
 TODO:
 * handle massive dataset (loading, processing, training, tuning, inference)
 * leverage GPU for speedup
+* incorporate Weight and Biases experiment tracking
