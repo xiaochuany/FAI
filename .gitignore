@@ -3,12 +3,8 @@
 # then add in what we want
 !README.md
 !.gitignore
-!notebooks
-!notebooks/**
-notebooks/*.DS_Store
-notebooks/*.png
-notebooks/*.jpg
-notebooks/formats
+!maths of neural networks notebooks
+!maths of neural networks notebooks/**
 !*/gfx
 !*.ipynb
 notebooks/data/
