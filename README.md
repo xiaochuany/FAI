@@ -50,4 +50,4 @@ Data scourse [Kaggle](https://www.kaggle.com/)
 
 TODO:
 * handle massive dataset (loading, processing, training, tuning, inference)
-* leverage GPU usage
+* leverage GPU for speedup
