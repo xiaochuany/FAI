@@ -5,7 +5,7 @@
 
 -----
 
-## Mathematics of Neural Networks (Teaching)
+## Mathematics of Neural Networks (Teaching MA2608)
 
 Deep learning for 2nd-year undergraduate students in mathematics
 
@@ -31,26 +31,7 @@ In the later notebooks (DL08-09), I take the object-oriented programming approac
 
 Although the MLP achieves about 97% accuracy for the MNIST data, this architecture struggles to handle (just slightly) more complicated datasets such as CIFAR10. Indeed, in notebook DL10, I demonstrate that running MLP leads to only 30% accuracy !
 
-In a PDF document, I also describe the mathematical derivation of the backprop algorithm and a few tricks for training neural networks. 
+Mathematical derivation of the backprop algorithm and a few tricks for training neural networks is given at the end in a PDF.  
 
 
 -----
-
-## Practical Machine Learning
-
-Focuses on machine learning of structured data, which is universal in the business world. This project includes demos in AWS SageMaker Studio Lab covering various topics throughout the lifecycle of a data project:
-
-* Data loading
-* Data processing (suitable for the intended algorithm)
-* Sklearn (random forest, gradient boosting), XGBoost
-* Training and hyperparameter search
-* Inference
-
-Data sources: 
-[Kaggle](https://www.kaggle.com/datasets) 
-[HugginFace](https://huggingface.co/docs/datasets/index)
-
-TODO:
-* handle massive dataset (loading, processing, training, tuning, inference)
-* leverage GPU for speedup
-* incorporate Weight and Biases experiment tracking
