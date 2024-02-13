@@ -1,7 +1,5 @@
-# FunAI 
 
-
-### getting started with fundamentals of AI
+# getting started with fundamentals of AI
 
 -----
 
